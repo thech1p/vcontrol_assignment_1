@@ -25,15 +25,11 @@ $(APP_EXECUTABLE): $(APP_OBJECTS) $(OBJECTS)
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
 
-
-.PHONY: clean
-
 clean:
 	-rm -f $(APP_EXECUTABLE)
 	find . -name "*.o" -print0 | xargs -0 rm -f
 #	find . -name "*.gcda" -print0 | xargs -0 rm -f
 #	find . -name "*.gcno" -print0 | xargs -0 rm -f
-
 
 git:
 	git add .
