@@ -15,7 +15,7 @@ OBJECTS=$(SRC:.cpp=.o)
 
 APP_SRC=main.cpp
 APP_OBJECTS=$(APP_SRC:.cpp=.o)
-APP_EXECUTABLE=app
+APP_EXECUTABLE=build/app
 
 all: $(SRC) $(APP_SRC) $(APP_EXECUTABLE)
 
@@ -26,10 +26,16 @@ $(APP_EXECUTABLE): $(APP_OBJECTS) $(OBJECTS)
 	$(CC) $(CFLAGS) $< -o $@
 
 
-#.PHONY: clean
+.PHONY: clean
 
 clean:
 	-rm -f $(APP_EXECUTABLE)
 	find . -name "*.o" -print0 | xargs -0 rm -f
 #	find . -name "*.gcda" -print0 | xargs -0 rm -f
 #	find . -name "*.gcno" -print0 | xargs -0 rm -f
+
+
+git:
+	git add .
+	git commit -m "$m"
+	git push -u origin main
