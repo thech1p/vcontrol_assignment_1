@@ -30,8 +30,8 @@ clean:
 	find . -name "*.o" -print0 | xargs -0 rm -f
 #	find . -name "*.gcda" -print0 | xargs -0 rm -f
 #	find . -name "*.gcno" -print0 | xargs -0 rm -f
-
+ 
 git:
 	git add .
-	git commit -m "$m"
+	git commit -m "edit - Anhar" -m 
 	git push -u origin master
