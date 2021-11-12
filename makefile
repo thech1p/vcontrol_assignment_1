@@ -33,5 +33,5 @@ clean:
  
 git:
 	git add .
-	git commit -m "edit - Anhar" -m 
+	git commit -m "$t" -m "$b"
 	git push -u origin master
